@@ -1,0 +1,25 @@
+.p-standard-page {
+  background: #F8F9FA;
+  width: 960px;
+  height: 100vh;
+  margin: 0 auto;
+}
+.c-header {
+  background: black;
+  .ant-menu {
+    height: 100%;
+    border: none;
+    background: none;
+    line-height: 64px;
+  }
+}
+
+.c-content {
+  padding: 30px;
+}
+
+.c-footer {
+  text-align: center;
+  background: black;
+  color: white;
+}
