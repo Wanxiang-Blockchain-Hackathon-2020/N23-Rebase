@@ -172,7 +172,11 @@ export default class extends BaseComponent {
             {/* <div className="alpha-tag dsk">ALPHA</div> */}
           </Menu.Item>
           <Menu.Item key="posts/create">
-            {I18N.get('post.title.add')}
+            {/* {I18N.get('post.title.add')} */}
+            创建提案
+          </Menu.Item>
+          <Menu.Item key="deposit">
+            捐款
           </Menu.Item>
         </Menu>
         <Menu
@@ -257,6 +261,7 @@ export default class extends BaseComponent {
       'signup',
       'profile',
       'posts/create',
+      'deposit',
     ], key)) {
       this.props.history.push(`/${e.key}`)
     } else if (key === 'logout') {

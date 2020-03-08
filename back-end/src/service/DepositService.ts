@@ -19,12 +19,13 @@ export default class extends Base {
 
   public async create(param: any): Promise<Document> {
     const {
-      content, proposalId, status
+      content, postId, status, amount
     } = param
 
     const doc: any = {
       content,
-      proposalId,
+      postId,
+      amount,
       createdBy: this.currentUser._id
     }
 
@@ -43,7 +44,7 @@ export default class extends Base {
    */
   public async update(param: any): Promise<Document> {
     const {
-      id: _id, content, status
+      id: _id, content, status, amount
     } = param
 
     if (!this.currentUser || !this.currentUser._id) {
@@ -60,7 +61,8 @@ export default class extends Base {
     }
 
     const doc: any = {
-      content
+      content,
+      amount,
     }
 
     try {
@@ -79,13 +81,13 @@ export default class extends Base {
    * @returns {Promise<Object>}
    */
   public async list(param: any): Promise<Object> {
-    const { proposalId } = param
-    if (!proposalId) {
-      throw 'DepositService.list - must specify a proposal id'
+    const { postId } = param
+    if (!postId) {
+      throw 'DepositService.list - must specify a post id'
     }
 
     const query: any = {
-      proposalId,
+      postId,
     }
 
     const cursor = this.model.getDBInstance().find(query).sort({
@@ -106,9 +108,6 @@ export default class extends Base {
     return await this.model.getDBInstance().findOne({ _id: id })
   }
 
-  public async getProposalById(id): Promise<any> {
-    return await this.getDBModel('CVote').getDBInstance().findOne({ _id: id })
-  }
 
   private isOwner(doc) {
     const userId = _.get(this.currentUser, '_id', '')

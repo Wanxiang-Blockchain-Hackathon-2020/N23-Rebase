@@ -7,7 +7,7 @@ export const Deposit = {
     type: String,
     // required: true
   },
-  num: {
+  amount: {
     type: Number,
     // required: true
   },
