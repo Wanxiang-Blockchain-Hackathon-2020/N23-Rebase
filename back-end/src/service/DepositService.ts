@@ -81,13 +81,13 @@ export default class extends Base {
    * @returns {Promise<Object>}
    */
   public async list(param: any): Promise<Object> {
-    const { postId } = param
-    if (!postId) {
-      throw 'DepositService.list - must specify a post id'
-    }
+    // const { postId } = param
+    // if (!postId) {
+    //   throw 'DepositService.list - must specify a post id'
+    // }
 
     const query: any = {
-      postId,
+
     }
 
     const cursor = this.model.getDBInstance().find(query).sort({

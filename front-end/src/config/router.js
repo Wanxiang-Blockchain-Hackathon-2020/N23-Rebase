@@ -11,6 +11,12 @@ import PostCreatePage from '@/module/page/post/create/Container'
 import PostEditPage from '@/module/page/post/edit/Container'
 import PostDetailPage from '@/module/page/post/detail/Container'
 
+// deposit
+import DepositListPage from '@/module/page/deposit/list/Container'
+import DepositCreatePage from '@/module/page/deposit/create/Container'
+import DepositEditPage from '@/module/page/deposit/edit/Container'
+import DepositDetailPage from '@/module/page/deposit/detail/Container'
+
 import NotFound from '@/module/page/error/NotFound'
 
 export default [
@@ -63,6 +69,27 @@ export default [
   {
     path: '/posts/:id',
     page: PostDetailPage,
+  },
+  /*
+     ********************************************************************************
+     * Deposit page
+     ********************************************************************************
+     */
+  {
+    path: '/deposits',
+    page: DepositListPage,
+  },
+  {
+    path: '/deposits/create',
+    page: DepositCreatePage,
+  },
+  {
+    path: '/deposits/:id/edit',
+    page: DepositEditPage,
+  },
+  {
+    path: '/deposits/:id',
+    page: DepositDetailPage,
   },
   /*
     ********************************************************************************

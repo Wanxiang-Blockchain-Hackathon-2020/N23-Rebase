@@ -5,6 +5,7 @@ import {utilCrypto} from '../utility'
 import * as moment from 'moment'
 
 import post from './post'
+import deposit from './deposit'
 import upload from './upload'
 import user from './user'
 
@@ -56,6 +57,7 @@ export const middleware = async (req: Request, res: Response, next: NextFunction
 const router = Router()
 
 router.use('/post', post)
+router.use('/deposit', deposit)
 router.use('/user', user)
 router.use('/upload', upload)
 

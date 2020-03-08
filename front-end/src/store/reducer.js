@@ -3,6 +3,7 @@ import {routerReducer} from 'react-router-redux'
 
 import user from './redux/user'
 import post from './redux/post'
+import deposit from './redux/deposit'
 import language from './redux/language'
 
 const default_state = {
@@ -20,5 +21,6 @@ export default combineReducers({
   router: routerReducer,
   user: user.getReducer(),
   post: post.getReducer(),
+  deposit: deposit.getReducer(),
   language: language.getReducer(),
 })

@@ -175,7 +175,7 @@ export default class extends BaseComponent {
             {/* {I18N.get('post.title.add')} */}
             创建提案
           </Menu.Item>
-          <Menu.Item key="deposit">
+          <Menu.Item key="deposits">
             捐款
           </Menu.Item>
         </Menu>
@@ -261,7 +261,7 @@ export default class extends BaseComponent {
       'signup',
       'profile',
       'posts/create',
-      'deposit',
+      'deposits',
     ], key)) {
       this.props.history.push(`/${e.key}`)
     } else if (key === 'logout') {

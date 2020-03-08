@@ -1,7 +1,7 @@
 import React from 'react'
 import MediaQuery from 'react-responsive'
 import BackLink from '@/module/shared/BackLink/Component'
-import PostForm from '@/module/form/PostForm/Component'
+import DepositForm from '@/module/form/DepositForm/Component'
 import I18N from '@/I18N'
 import { LG_WIDTH } from '@/config/constant'
 import Meta from '@/module/common/Meta'
@@ -23,7 +23,7 @@ export default class extends StandardPage {
   }
 
   onSubmit = (model) => {
-    return this.props.createPost(model)
+    return this.props.createDeposit(model)
       .then(() => this.historyBack())
       .catch(err => this.setState({ error: err }))
   }
@@ -32,15 +32,15 @@ export default class extends StandardPage {
     return (
       <div>
         <Meta
-          title="Add Post Detail"
+          title="Deposit"
           url={this.props.location.pathname}
         />
 
         <Container className="c_PostDetail">
           <h2>
-            {I18N.get('post.title.add')}
+            充值DAI的数量（年利率 8%）
           </h2>
-          <PostForm
+          <DepositForm
             lang={this.props.lang}
             onSubmit={this.onSubmit}
             onCancel={this.historyBack}
