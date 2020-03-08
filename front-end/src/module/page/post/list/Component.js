@@ -8,6 +8,7 @@ import { POST_STATUS } from '@/constant'
 import { logger } from '@/util'
 import StandardPage from '@/module/page/StandardPage'
 import { breakPoint } from '@/constants/breakPoint'
+import moment from 'moment/moment'
 
 // import {} from './style'
 
@@ -65,8 +66,7 @@ export default class extends StandardPage {
   renderHeader() {
     return (
       <div>
-        <PostContainer
-          className="title komu-a cr-title-with-icon">
+        <PostContainer>
           {this.props.header || I18N.get('post.title.allPosts').toUpperCase()}
         </PostContainer>
       </div>
@@ -105,6 +105,10 @@ export default class extends StandardPage {
       <ItemContainer key={data._id}>
         {/* {metaNode} */}
         {title}
+        {moment(data.createdAt).format('MMM D, YYYY')}
+        <span> by </span>
+        {data.createdBy._id}
+        <hr />
         {/* {tagsNode} */}
         {/* <ShortDesc>
           <MarkdownPreview content={data.desc} />
