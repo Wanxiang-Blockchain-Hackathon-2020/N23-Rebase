@@ -67,7 +67,7 @@ export default class extends StandardPage {
     return (
       <div>
         <PostContainer>
-          {this.props.header || I18N.get('post.title.allPosts').toUpperCase()}
+          <h2>所有提案</h2>
         </PostContainer>
       </div>
     )
