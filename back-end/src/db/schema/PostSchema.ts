@@ -8,6 +8,9 @@ const PostCore = {
   title: {
     type: String
   },
+  to: {
+    type: String
+  },
   amount: {
     type: Number,
     // required: true

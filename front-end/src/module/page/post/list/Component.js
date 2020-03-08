@@ -109,6 +109,7 @@ export default class extends StandardPage {
         <span> by </span>
         {data.createdBy._id}
         <div>金额：{data.amount || 1}</div>
+        <div>捐给：{data.to}</div>
         <hr />
         {/* {tagsNode} */}
         {/* <ShortDesc>
