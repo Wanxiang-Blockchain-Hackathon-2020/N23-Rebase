@@ -68,7 +68,6 @@ export default class extends StandardPage {
         <DepositContainer>
           <h2>捐款列表</h2>
           <Link to='/deposits/create'>我要捐款</Link>
-
         </DepositContainer>
       </div>
     )
@@ -86,9 +85,12 @@ export default class extends StandardPage {
         result = _.map(dataList, data => this.renderItem(data))
       }
     }
+    let total = _.sumBy(dataList, 'amount')
 
     return (
       <div>
+        <h3>可支配捐款总额：{total * 0.08}</h3>
+        <hr />
         <div className="list-container">
           {result}
         </div>
@@ -100,13 +102,16 @@ export default class extends StandardPage {
   renderItem = (data) => {
     const href = `/deposits/${data._id}`
     // const metaNode = this.renderMetaNode(data)
-    const title = <ItemTitle to={href}>{data.amount}</ItemTitle>
     // const tagsNode = this.renderTagsNode(data)
     return (
       <ItemContainer key={data._id}>
         {/* {metaNode} */}
-        {title}
+        {data.createdBy}
+        存入了
+        {data.amount}
+        个DAI
         <div>每年可用捐款：{data.amount * 0.08}</div>
+        <hr />
         {/* {tagsNode} */}
         {/* <ShortDesc>
           <MarkdownPreview content={data.desc} />

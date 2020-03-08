@@ -101,7 +101,7 @@ export default class extends BaseService {
 
       res = await api_request({
         path,
-        method: 'deposit',
+        method: 'post',
         data: doc,
       })
     } catch (error) {
@@ -171,7 +171,7 @@ export default class extends BaseService {
 
     const res = await api_request({
       path,
-      method: 'deposit',
+      method: 'post',
     })
 
     return res

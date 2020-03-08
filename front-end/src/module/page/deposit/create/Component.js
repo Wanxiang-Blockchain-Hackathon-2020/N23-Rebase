@@ -19,7 +19,7 @@ export default class extends StandardPage {
   }
 
   historyBack = () => {
-    this.props.history.push('/')
+    this.props.history.push('/deposits')
   }
 
   onSubmit = (model) => {
