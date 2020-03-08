@@ -8,6 +8,10 @@ const PostCore = {
   title: {
     type: String
   },
+  amount: {
+    type: Number,
+    // required: true
+  },
   descUpdatedAt: Date,
 
   desc: {

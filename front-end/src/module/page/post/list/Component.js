@@ -108,6 +108,7 @@ export default class extends StandardPage {
         {moment(data.createdAt).format('MMM D, YYYY')}
         <span> by </span>
         {data.createdBy._id}
+        <div>金额：{data.amount || 1}</div>
         <hr />
         {/* {tagsNode} */}
         {/* <ShortDesc>

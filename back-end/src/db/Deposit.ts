@@ -1,5 +1,5 @@
 import Base from './Base'
-import { Deposit } from './schema/Deposit'
+import { Deposit } from './schema/DepositSchema'
 
 export default class extends Base {
     protected getSchema(){

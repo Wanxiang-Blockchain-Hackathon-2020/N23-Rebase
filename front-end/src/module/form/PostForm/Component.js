@@ -60,6 +60,20 @@ class C extends BaseComponent {
     )
   }
 
+  getAmountInput() {
+    const { initialValues = {} } = this.props
+    const { getFieldDecorator } = this.props.form
+
+    return getFieldDecorator('amount', {
+      rules: [
+        { required: true, message: I18N.get('post.form.error.required') }
+      ],
+      initialValue: 1
+    })(
+      <Input size="large" type="number" />
+    )
+  }
+
   getTextarea(id) {
     const { initialValues = {} } = this.props
     const { getFieldDecorator } = this.props.form
@@ -91,6 +105,15 @@ class C extends BaseComponent {
             colon={false}
             >
             {this.getTitleInput()}
+          </FormItem>
+          <FormItem
+            // label={`${I18N.get('post.form.fields.amount')} *`}
+            label={`数量 *`}
+            // labelCol={{span: 23}}
+            // wrapperCol={{span: 18}}
+            colon={false}
+            >
+            {this.getAmountInput()}
           </FormItem>
           <FormItem
             label={`${I18N.get('post.form.fields.desc')} *`}
